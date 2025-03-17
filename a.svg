@@ -1,0 +1,58 @@
+<svg width="400" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变背景 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d3d3d3; stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ffffff; stop-opacity:1"/>
+    </linearGradient>
+    <!-- 阴影滤镜 -->
+    <filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect x="0" y="0" width="400" height="120" fill="url(#bgGradient)"/>
+  
+  <!-- 箭头图形：由多个蓝色六边形组成 -->
+  <g filter="url(#dropshadow)">
+    <!-- 行 1：中心六边形（箭头尖端）-->
+    <!-- 中心坐标 (60,20)，r = 8 -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="68,20 64,27 56,27 52,20 56,13 64,13"/>
+    
+    <!-- 行 2：左右两个六边形 -->
+    <!-- 左侧中心 (50,40) -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="58,40 54,47 46,47 42,40 46,33 54,33"/>
+    <!-- 右侧中心 (70,40) -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="78,40 74,47 66,47 62,40 66,33 74,33"/>
+    
+    <!-- 行 3：构成箭头较宽的部分，三个六边形 -->
+    <!-- 左侧中心 (40,60) -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="48,60 44,67 36,67 32,60 36,53 44,53"/>
+    <!-- 中间中心 (60,60) -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="68,60 64,67 56,67 52,60 56,53 64,53"/>
+    <!-- 右侧中心 (80,60) -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="88,60 84,67 76,67 72,60 76,53 84,53"/>
+    
+    <!-- 行 4：箭头尾部，收拢为单个六边形 -->
+    <!-- 中心 (60,80) -->
+    <polygon fill="#1E90FF" stroke="#1E90FF" stroke-width="1" 
+      points="68,80 64,87 56,87 52,80 56,73 64,73"/>
+  </g>
+  
+  <!-- 文字部分 "SCALER" -->
+  <text x="110" y="70" font-family="Helvetica, Arial, sans-serif" font-size="48" font-weight="bold" fill="#333333" filter="url(#dropshadow)">
+    SCALER
+  </text>
+</svg>
